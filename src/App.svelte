@@ -56,169 +56,193 @@
     'Z': '#22c55e'  // Green for Setters
   };
 
+
+  const base_positions = {
+    5: { x: 20, y: 60 },
+    6: { x: 50, y: 60 },
+    1: { x: 80, y: 60 },
+    2: { x: 80, y: 10 },
+    3: { x: 50, y: 10 },
+    4: { x: 20, y: 10 }
+  }
+
+  const attack_positions = {
+    5: { x: 30, y: 50 },
+    6: { x: 50, y: 80 },
+    1: { x: 70, y: 50 },
+    2: { x: 80, y: 10 },
+    3: { x: 50, y: 10 },
+    4: { x: 20, y: 10 }
+  }
+
+
   const rotations = [
     {
       id: 1,
       base: [
-        { x: 20, y: 60 },
-        { x: 50, y: 60 },
-        { x: 80, y: 60 },
-        { x: 80, y: 10 },
-        { x: 50, y: 10 },
-        { x: 20, y: 10 }
+        base_positions[5],
+        base_positions[6],
+        base_positions[1],
+        base_positions[2],
+        base_positions[3],
+        base_positions[4],
       ],
       attack: [
-        { x: 30, y: 50 },
-        { x: 50, y: 80 },
-        { x: 70, y: 50 },
-        { x: 20, y: 10 },
-        { x: 50, y: 10 },
-        { x: 80, y: 10 },
+        attack_positions[5],
+        attack_positions[6],
+        attack_positions[1],
+        attack_positions[4],
+        attack_positions[3],
+        attack_positions[2],
       ],
       defense: [
-        { x: 30, y: 50 },
-        { x: 50, y: 80 },
-        { x: 70, y: 50 },
-        { x: 20, y: 10 },
-        { x: 50, y: 10 },
-        { x: 80, y: 10 },
+        // Laufer 1
+        {x: base_positions[5].x + 30, y: base_positions[5].y + 5},
+        {x: base_positions[6].x + 30, y: base_positions[6].y + 5},
+        {x: base_positions[1].x, y: base_positions[1].y - 45},
+        {x: base_positions[2].x + 10, y: base_positions[2].y - 5},
+        base_positions[3],
+        {x: base_positions[4].x, y: base_positions[4].y + 45},
+
       ]
     },
     {
       id: 2,
       base: [
-        { x: 20, y: 10 },
-        { x: 20, y: 60 },
-        { x: 50, y: 60 },
-        { x: 80, y: 60 },
-        { x: 80, y: 10 },
-        { x: 50, y: 10 },
+        base_positions[4],
+        base_positions[5],
+        base_positions[6],
+        base_positions[1],
+        base_positions[2],
+        base_positions[3],
       ],
       attack: [
-        { x: 30, y: 10 },
-        { x: 30, y: 50 },
-        { x: 50, y: 80 },
-        { x: 70, y: 50 },
-        { x: 70, y: 10 },
-        { x: 50, y: 10 },
+        attack_positions[4],
+        attack_positions[6],
+        attack_positions[1],
+        attack_positions[5],
+        attack_positions[3],
+        attack_positions[2],
       ],
       defense: [
-        { x: 80, y: 10 },
-        { x: 30, y: 50 },
-        { x: 50, y: 80 },
-        { x: 70, y: 50 },
-        { x: 20, y: 10 },
-        { x: 50, y: 10 },
+        // Laufer 6
+        base_positions[4],
+        base_positions[5],
+        {x: base_positions[6].x + 25, y: base_positions[6].y-45},
+        base_positions[1],
+        {x: base_positions[2].x - 30, y: base_positions[2].y + 45},
+        {x: base_positions[3].x + 10, y: base_positions[3].y},
       ]
     },
     {
       id: 3,
       base: [
-        { x: 50, y: 10 },
-        { x: 20, y: 10 },
-        { x: 20, y: 60 },
-        { x: 50, y: 60 },
-        { x: 80, y: 60 },
-        { x: 80, y: 10 },
+        base_positions[3],
+        base_positions[4],
+        base_positions[5],
+        base_positions[6],
+        base_positions[1],
+        base_positions[2],
       ],
       attack: [
-        { x: 50, y: 82 },
-        { x: 75, y: 75 },
-        { x: 30, y: 75 },
-        { x: 50, y: 25 },
-        { x: 75, y: 35 },
-        { x: 25, y: 35 }
+        attack_positions[4],
+        attack_positions[3],
+        attack_positions[1],
+        attack_positions[5],
+        attack_positions[6],
+        attack_positions[2],
       ],
       defense: [
-        { x: 50, y: 90 },
-        { x: 80, y: 85 },
-        { x: 20, y: 85 },
-        { x: 50, y: 50 },
-        { x: 80, y: 55 },
-        { x: 20, y: 55 }
+        // Laufer 5
+        {x: base_positions[3].x - 25, y: base_positions[3].y + 45},
+        base_positions[4],
+        {x: base_positions[5].x + 25, y: base_positions[5].y - 40},
+        base_positions[6],
+        base_positions[1],
+        base_positions[2],
       ]
     },
     {
       id: 4,
       base: [
-        { x: 80, y: 10 },
-        { x: 50, y: 10 },
-        { x: 20, y: 10 },
-        { x: 20, y: 60 },
-        { x: 50, y: 60 },
-        { x: 80, y: 60 },
+        base_positions[2],
+        base_positions[3],
+        base_positions[4],
+        base_positions[5],
+        base_positions[6],
+        base_positions[1],
       ],
       attack: [
-        { x: 25, y: 35 },
-        { x: 50, y: 25 },
-        { x: 75, y: 35 },
-        { x: 30, y: 75 },
-        { x: 50, y: 82 },
-        { x: 75, y: 75 }
+        attack_positions[4],
+        attack_positions[3],
+        attack_positions[2],
+        attack_positions[5],
+        attack_positions[6],
+        attack_positions[1],
       ],
       defense: [
-        { x: 20, y: 55 },
-        { x: 50, y: 50 },
-        { x: 80, y: 55 },
-        { x: 20, y: 85 },
-        { x: 50, y: 90 },
-        { x: 80, y: 85 }
+        {x: base_positions[2].x + 10, y: base_positions[2].y - 5},
+        base_positions[3],
+        {x: base_positions[4].x, y: base_positions[4].y + 45},
+        {x: base_positions[5].x + 30, y: base_positions[5].y + 5},
+        {x: base_positions[6].x + 30, y: base_positions[6].y + 5},
+        {x: base_positions[1].x, y: base_positions[1].y - 45},
       ]
     },
-    {
+     {
       id: 5,
       base: [
-        { x: 80, y: 60 },
-        { x: 80, y: 10 },
-        { x: 50, y: 10 },
-        { x: 20, y: 10 },
-        { x: 20, y: 60 },
-        { x: 50, y: 60 },
+        base_positions[1],
+        base_positions[2],
+        base_positions[3],
+        base_positions[4],
+        base_positions[5],
+        base_positions[6],
       ],
       attack: [
-        { x: 75, y: 35 },
-        { x: 25, y: 35 },
-        { x: 50, y: 25 },
-        { x: 75, y: 75 },
-        { x: 30, y: 75 },
-        { x: 50, y: 82 }
+        attack_positions[5],
+        attack_positions[3],
+        attack_positions[2],
+        attack_positions[4],
+        attack_positions[6],
+        attack_positions[1],
       ],
       defense: [
-        { x: 80, y: 55 },
-        { x: 20, y: 55 },
-        { x: 50, y: 50 },
-        { x: 80, y: 85 },
-        { x: 20, y: 85 },
-        { x: 50, y: 90 }
+        base_positions[1],
+        {x: base_positions[2].x - 30, y: base_positions[2].y + 45},
+        {x: base_positions[3].x + 10, y: base_positions[3].y},
+        base_positions[4],
+        base_positions[5],
+        {x: base_positions[6].x + 25, y: base_positions[6].y-45},
       ]
     },
     {
       id: 6,
       base: [
-        { x: 50, y: 60 },
-        { x: 80, y: 60 },
-        { x: 80, y: 10 },
-        { x: 50, y: 10 },
-        { x: 20, y: 10 },
-        { x: 20, y: 60 },
+        base_positions[6],
+        base_positions[1],
+        base_positions[2],
+        base_positions[3],
+        base_positions[4],
+        base_positions[5],
       ],
       attack: [
-        { x: 50, y: 25 },
-        { x: 75, y: 35 },
-        { x: 25, y: 35 },
-        { x: 50, y: 82 },
-        { x: 75, y: 75 },
-        { x: 30, y: 75 }
+        attack_positions[5],
+        attack_positions[6],
+        attack_positions[2],
+        attack_positions[4],
+        attack_positions[3],
+        attack_positions[1],
       ],
       defense: [
-        { x: 50, y: 50 },
-        { x: 80, y: 55 },
-        { x: 20, y: 55 },
-        { x: 50, y: 90 },
-        { x: 80, y: 85 },
-        { x: 20, y: 85 }
+        base_positions[6],
+        base_positions[1],
+        base_positions[2],
+        {x: base_positions[3].x - 25, y: base_positions[3].y + 45},
+        base_positions[4],
+        {x: base_positions[5].x + 25, y: base_positions[5].y - 40},
       ]
-    }
+    },
   ];
 
   let currentPositions = rotations[0].base.map(pos => ({ ...pos }));
